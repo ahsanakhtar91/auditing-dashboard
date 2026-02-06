@@ -32,10 +32,10 @@ import {
   fileExportIcon,
   fileValidationIcon,
   sortingAZIcon,
+  arrowLeftIcon,
   avatarE,
   avatarM,
   ellipse116,
-  ellipse117,
 } from "../../assets";
 
 interface PerspectivesProps {
@@ -152,9 +152,17 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
         <Header />
 
         <div className="flex-1 p-8 space-y-6">
-          <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
-            Digital Transformation Strategic Planning
-          </h1>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onNavigate?.("dashboard")}
+              className="rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <Icon src={arrowLeftIcon} size="sm" />
+            </button>
+            <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+              Digital Transformation Strategic Planning
+            </h1>
+          </div>
 
           <Card className="border-[#e0e7ec]">
             <CardContent className="p-6">
@@ -232,9 +240,9 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                         {tableHeaders.map((header, index) => (
                           <TableHead
                             key={index}
-                            className="[font-family:'Cairo',Helvetica]"
+                            className="[font-family:'Cairo',Helvetica] text-center"
                           >
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-center gap-2">
                               <span className="text-primary-color text-xs font-normal">
                                 {header.label}
                               </span>
@@ -253,7 +261,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                           <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
                             {doc.number}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm">
+                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
                             {doc.name}
                           </TableCell>
                           <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
@@ -268,7 +276,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                           <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
                             {doc.dueDate}
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="text-center">
                             <Badge
                               className={`${doc.statusColor} [font-family:'Cairo',Helvetica] font-normal text-sm`}
                             >
