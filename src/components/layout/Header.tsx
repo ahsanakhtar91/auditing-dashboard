@@ -6,7 +6,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../core/avatar";
+} from "../core/Avatar";
 import { Input } from "../core/Input";
 import { Icon } from "../core/Icon";
 import { chevronDownIcon, avatarEllipse18 } from "../../assets";
