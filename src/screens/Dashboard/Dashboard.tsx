@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -221,12 +222,17 @@ const getStatusColor = (index: number, total: number) => {
 };
 
 export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav activeItem="dashboard" onNavigate={onNavigate} />
+      <SideNav activeItem="dashboard" collapsed={sidebarCollapsed} onNavigate={onNavigate} />
 
       <main className="flex-1">
-        <Header />
+        <Header 
+          sidebarCollapsed={sidebarCollapsed} 
+          onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)} 
+        />
 
         <div className="p-6 space-y-6">
           <Card className="border-[#e0e7ec]">
@@ -248,30 +254,36 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
-                <div className="relative h-3.5 bg-[#f5f8fb] rounded-[10px]">
-                  <div className="absolute left-0 top-0 w-[25%] h-3.5 bg-[#1ea54e] rounded-[10px]" />
-                  {[1, 2, 3, 4, 5, 6].map((_, index) => (
-                    <div
-                      key={index}
-                      className={`absolute top-[2px] w-2.5 h-2.5 rounded-[5px] ${
-                        index < 2 ? "bg-white-color" : "bg-accent-red"
-                      }`}
-                      style={{ left: `${(index + 1) * 15}%` }}
-                    />
-                  ))}
+              <div className="space-y-4">
+                {/* Timeline track with dots */}
+                <div className="relative bg-[#f5f8fb]">
+                  {/* Background track */}
+                  <div className="h-3.5 bg-[#f5f8fb] rounded-[10px]">
+                    {/* Green progress fill */}
+                    <div className="absolute left-0 top-0 w-[30%] h-3.5 bg-[#1ea54e] rounded-[10px]" />
+                  </div>
+                  {/* Dots positioned on the track */}
+                  <div className="absolute inset-0 grid grid-cols-6">
+                    {timelinePhases.map((_, index) => (
+                      <div key={index} className="flex items-center justify-center">
+                        <div
+                          className={`w-2.5 h-2.5 rounded-full ${
+                            index < 2 ? "bg-white-color" : "bg-accent-red"
+                          }`}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex justify-between">
+                {/* Labels aligned with dots */}
+                <div className="grid grid-cols-6 mt-2">
                   {timelinePhases.map((phase, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-center gap-2"
-                    >
-                      <span className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-sm">
+                    <div key={index} className="flex flex-col items-center">
+                      <span className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-sm text-center">
                         {phase.label}
                       </span>
-                      <span className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm">
+                      <span className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm text-center mt-1">
                         {phase.date}
                       </span>
                     </div>
@@ -284,15 +296,17 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           <div className="grid grid-cols-6 gap-4">
             {metricCards.map((card, index) => (
               <Card key={index} className="border-[#e0e7ec]">
-                <CardContent className="pt-6">
-                  <div className="flex flex-col items-center gap-2">
-                    <img src={card.icon} alt="" className="w-6 h-6" />
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
-                      {card.value}
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between">
+                    <div className="flex flex-col">
+                      <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
+                        {card.value}
+                      </div>
+                      <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm mt-1">
+                        {card.label}
+                      </div>
                     </div>
-                    <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm text-center">
-                      {card.label}
-                    </div>
+                    <img src={card.icon} alt="" className="w-6 h-6 text-accent-red" />
                   </div>
                 </CardContent>
               </Card>

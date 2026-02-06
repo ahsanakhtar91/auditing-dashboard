@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowLeftIcon,
   SendIcon,
@@ -127,12 +128,17 @@ const tableHeaders = [
 ];
 
 export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav activeItem="perspectives" onNavigate={onNavigate} />
+      <SideNav activeItem="perspectives" collapsed={sidebarCollapsed} onNavigate={onNavigate} />
 
       <main className="flex-1 flex flex-col">
-        <Header />
+        <Header 
+          sidebarCollapsed={sidebarCollapsed} 
+          onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)} 
+        />
 
         <div className="flex-1 p-8 space-y-6">
           <div className="flex items-center gap-2">
