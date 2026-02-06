@@ -2,7 +2,7 @@
 
 Digital transformation and compliance tracking platform.
 
-**Live Demo:** https://auditing-dashboard-two.vercel.app/
+**Live Demo:** https://auditing-dashboard-react.vercel.app
 
 ## Run Locally
 
