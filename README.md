@@ -1,39 +1,37 @@
 # Auditing Dashboard
 
-A digital transformation and compliance tracking platform built with Next.js 15, TypeScript, and Tailwind CSS.
+Digital transformation and compliance tracking platform.
 
-## Live Demo
+**Live Demo:** https://auditing-dashboard-two.vercel.app/
 
-**[View Live Demo](https://auditing-dashboard-two.vercel.app/)**
-
-## Getting Started
-
-> **Prerequisites:**
-> The following steps require [NodeJS](https://nodejs.org/en/) to be installed on your system.
-
-Install the dependencies:
+## Run Locally
 
 ```bash
-yarn install
+npm install
+npm run dev
 ```
 
-Run the development server:
+Open http://localhost:3000
+
+## Build
 
 ```bash
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## Build for Production
-
-```bash
-yarn build
+npm run build
 ```
 
 ## Tech Stack
 
-- **Framework:** Next.js 15
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Package Manager:** Yarn
+- React + TypeScript + Vite
+- Tailwind CSS
+- Radix UI components
+
+## Notes
+
+- Data is static (no backend)
+
+## Improvements with more time
+
+- Mobile responsiveness
+- Proper routing (React Router)
+- API integration
+- Unit tests
