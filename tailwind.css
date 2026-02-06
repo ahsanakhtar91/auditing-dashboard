@@ -11,14 +11,18 @@
   --accent-red: rgba(219, 31, 38, 1);
   --background-color: rgba(245, 248, 250, 1);
   --border-color: rgba(224, 232, 237, 1);
+  --error: rgba(245, 10, 10, 1);
+  --info: rgba(0, 120, 215, 1);
   --primary-color: rgba(29, 53, 87, 1);
   --secondary-color: rgba(133, 151, 168, 1);
+  --success: rgba(30, 165, 78, 1);
   --typography-label-font-family: "Inter", Helvetica;
   --typography-label-font-size: 12px;
   --typography-label-font-style: normal;
   --typography-label-font-weight: 500;
   --typography-label-letter-spacing: 0px;
   --typography-label-line-height: 16px;
+  --warning: rgba(245, 159, 10, 1);
   --white-color: rgba(255, 255, 255, 1);
 }
 

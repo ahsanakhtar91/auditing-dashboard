@@ -1,15 +1,6 @@
 import {
   ArrowLeftIcon,
-  BarChart3Icon,
-  BellIcon,
-  CheckSquareIcon,
-  ChevronDownIcon,
-  FileIcon,
-  FileTextIcon,
-  HomeIcon,
-  SearchIcon,
   SendIcon,
-  UsersIcon,
 } from "lucide-react";
 import {
   Avatar,
@@ -19,7 +10,6 @@ import {
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { Input } from "../../components/ui/input";
 import { Separator } from "../../components/ui/separator";
 import {
   Table,
@@ -35,15 +25,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../components/ui/tabs";
+import { SideNav } from "../../components/layout/SideNav";
+import { Header } from "../../components/layout/Header";
 
-const navigationItems = [
-  { icon: HomeIcon, label: "Dashboard", active: true },
-  { icon: FileTextIcon, label: "Perspectives", active: false },
-  { icon: CheckSquareIcon, label: "Tasks", active: false },
-  { icon: FileIcon, label: "Documents", active: false },
-  { icon: BarChart3Icon, label: "Reports", active: false },
-  { icon: UsersIcon, label: "UsersIcon & Roles", active: false },
-];
+interface PerspectivesProps {
+  onNavigate?: (page: string) => void;
+}
 
 const statisticsCards = [
   { icon: "/hugeicons-files-01.svg", count: "4", label: "Total Evidence" },
@@ -139,75 +126,19 @@ const tableHeaders = [
   { label: "Status", icon: "/hugeicons-sorting-a-z-02.svg" },
 ];
 
-export const Perspectives = (): JSX.Element => {
+export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => {
   return (
     <div className="flex min-h-screen bg-background-color">
-      <aside className="w-64 bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col">
-        <div className="p-6">
-          <img
-            className="w-[100px] h-10 object-cover"
-            alt="Tahwul"
-            src="/tahwul-01-3x-1.png"
-          />
-        </div>
-
-        <nav className="flex-1 px-6 py-4 space-y-2">
-          {navigationItems.map((item, index) => (
-            <button
-              key={index}
-              className={`flex w-full items-center gap-2.5 p-2.5 rounded-lg transition-colors ${
-                item.active
-                  ? "bg-[#98aec01a] text-white"
-                  : "text-[#7a9ec2] hover:bg-[#98aec01a] hover:text-white"
-              }`}
-            >
-              <item.icon className="w-4 h-4" />
-              <span className="[font-family:'Cairo',Helvetica] font-medium text-sm">
-                {item.label}
-              </span>
-            </button>
-          ))}
-        </nav>
-
-        <div className="p-6">
-          <img className="w-9 h-9" alt="Frame" src="/frame-1171274846.svg" />
-        </div>
-      </aside>
+      <SideNav activeItem="perspectives" onNavigate={onNavigate} />
 
       <main className="flex-1 flex flex-col">
-        <header className="h-[60px] bg-white border-b border-[#e0e7ec] flex items-center justify-between px-8">
-          <div className="flex items-center gap-4 flex-1 max-w-[318px]">
-            <div className="relative flex-1">
-              <Input
-                placeholder="Search"
-                className="pl-10 bg-background-color border-[#e0e7ec] [font-family:'Cairo',Helvetica]"
-              />
-              <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary-color" />
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <button className="relative">
-              <BellIcon className="w-4 h-4 text-primary-color" />
-              <span className="absolute -top-1 -right-1 w-[7px] h-[7px] bg-accent-red rounded-full" />
-            </button>
-
-            <div className="flex items-center gap-2 bg-[#f9fafa] rounded-[30px] px-4 py-2">
-              <Avatar className="w-6 h-6">
-                <AvatarImage src="/ellipse-18.svg" />
-                <AvatarFallback>M</AvatarFallback>
-              </Avatar>
-              <span className="font-typography-label text-[#23252a] text-xs">
-                Mohamed
-              </span>
-              <ChevronDownIcon className="w-3 h-3 text-[#23252a]" />
-            </div>
-          </div>
-        </header>
+        <Header />
 
         <div className="flex-1 p-8 space-y-6">
           <div className="flex items-center gap-2">
-            <ArrowLeftIcon className="w-4 h-4 text-primary-color" />
+            <button onClick={() => onNavigate?.("dashboard")} className="hover:bg-gray-100 p-1 rounded transition-colors">
+              <ArrowLeftIcon className="w-4 h-4 text-primary-color" />
+            </button>
             <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
               Digital Transformation Strategic Planning
             </h1>
