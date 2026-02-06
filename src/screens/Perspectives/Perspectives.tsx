@@ -181,13 +181,8 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                     alt="Progress circle"
                     src={ellipse116}
                   />
-                  <Icon
-                    className="absolute top-0 left-px w-[81px] h-[81px]"
-                    alt="Progress fill"
-                    src={ellipse117}
-                  />
                   <div className="absolute inset-0 flex items-center justify-center [font-family:'Cairo',Helvetica] font-bold text-primary-color text-sm">
-                    100%
+                    0%
                   </div>
                 </div>
               </div>

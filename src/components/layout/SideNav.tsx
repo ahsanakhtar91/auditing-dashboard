@@ -4,8 +4,8 @@ import {
   medicalFileIcon,
   profileIcon,
   fileIcon,
-  chartBarLineIcon,
-  userMultipleIcon
+  userMultipleIcon,
+  chartBarLineIcon1
 } from "../../assets";
 import tahwulLogo from "../../assets/tahwul-01-3x-1.png";
 import { Icon } from "../core/Icon";
@@ -28,7 +28,7 @@ const navigationItems: NavItem[] = [
   { icon: medicalFileIcon, label: "Perspectives", id: "perspectives" },
   { icon: profileIcon, label: "Tasks", id: "tasks" },
   { icon: fileIcon, label: "Documents", id: "documents" },
-  { icon: chartBarLineIcon, label: "Reports", id: "reports" },
+  { icon: chartBarLineIcon1, label: "Reports", id: "reports" },
   { icon: userMultipleIcon, label: "Users & Roles", id: "users" },
 ];
 
