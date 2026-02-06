@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SendIcon } from "lucide-react";
 import {
   Avatar,
@@ -23,8 +22,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../components/core/Tabs";
-import { SideNav } from "../../components/layout/SideNav";
-import { Header } from "../../components/layout/Header";
 import { Icon } from "../../components/core/Icon";
 import {
   filesIcon,
@@ -137,21 +134,8 @@ const tableHeaders = [
 ];
 
 export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-
   return (
-    <div className="flex min-h-screen bg-background-color">
-      <SideNav
-        activeItem="perspectives"
-        collapsed={sidebarCollapsed}
-        onNavigate={onNavigate}
-        onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
-      />
-
-      <main className="flex-1 flex flex-col">
-        <Header />
-
-        <div className="flex-1 p-8 space-y-6">
+    <div className="flex-1 p-8 space-y-6">
           <div className="flex items-center gap-3">
             <button
               onClick={() => onNavigate?.("dashboard")}
@@ -365,8 +349,6 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
               </div>
             </TabsContent>
           </Tabs>
-        </div>
-      </main>
     </div>
   );
 };

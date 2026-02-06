@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -18,8 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/core/Select";
-import { SideNav } from "../../components/layout/SideNav";
-import { Header } from "../../components/layout/Header";
 import { Icon } from "../../components/core/Icon";
 import {
   chartBarLineIcon,
@@ -234,21 +231,8 @@ const getStatusColor = (index: number, total: number) => {
 };
 
 export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-
   return (
-    <div className="flex min-h-screen bg-background-color">
-      <SideNav
-        activeItem="dashboard"
-        collapsed={sidebarCollapsed}
-        onNavigate={onNavigate}
-        onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
-      />
-
-      <main className="flex-1">
-        <Header />
-
-        <div className="p-6 space-y-6">
+    <div className="flex-1 p-6 space-y-6">
           <Card className="border-[#e0e7ec]">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
@@ -580,8 +564,6 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </main>
     </div>
   );
 };
