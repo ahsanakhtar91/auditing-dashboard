@@ -236,7 +236,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           <Card className="border-[#e0e7ec]">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Project Timeline
                 </CardTitle>
                 <Select defaultValue="2026">
@@ -277,10 +277,10 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                 <div className="grid grid-cols-6 mt-2">
                   {timelinePhases.map((phase, index) => (
                     <div key={index} className="flex flex-col items-center">
-                      <span className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-sm text-center">
+                      <span className="font-medium text-primary-color text-sm text-center">
                         {phase.label}
                       </span>
-                      <span className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm text-center mt-1">
+                      <span className="font-normal text-secondary-color text-sm text-center mt-1">
                         {phase.date}
                       </span>
                     </div>
@@ -296,10 +296,10 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between">
                     <div className="flex flex-col">
-                      <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
+                      <div className="font-bold text-primary-color text-2xl">
                         {card.value}
                       </div>
-                      <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm mt-1">
+                      <div className="font-normal text-secondary-color text-sm mt-1">
                         {card.label}
                       </div>
                     </div>
@@ -313,16 +313,16 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           <Card className="border-[#e0e7ec]">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Progress Status
                 </CardTitle>
                 <div className="flex items-center gap-[18px]">
                   {statusLegend.map((status, index) => (
                     <div key={index} className="flex items-center gap-1">
-                      <span className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm">
+                      <div className={`w-2 h-2 ${status.color} rounded`} />
+                      <span className="font-normal text-primary-color text-sm">
                         {status.label}
                       </span>
-                      <div className={`w-2 h-2 ${status.color} rounded`} />
                     </div>
                   ))}
                 </div>
@@ -337,7 +337,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                     onClick={() => onNavigate?.("perspectives")}
                   >
                     <div className="bg-primary-color rounded-[10px] p-4 h-[90px] flex flex-col items-center justify-center hover:bg-[#2a4a6b] transition-colors">
-                      <div className="[font-family:'Cairo',Helvetica] font-bold text-white-color text-xs text-center mb-2">
+                      <div className="font-bold text-white-color text-xs text-center mb-2">
                         {perspective.title}
                       </div>
                       <Badge className="bg-[#ffffff1a] text-white-color text-sm font-bold">
@@ -351,7 +351,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                         className="bg-[#f5f8fb] rounded-[10px] border border-[#e0e7ec] p-3 flex flex-col items-center gap-2"
                         style={{ minHeight: `${sub.items.length * 30 + 40}px` }}
                       >
-                        <div className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-[10px] text-center">
+                        <div className="font-normal text-primary-color text-[10px] text-center">
                           {sub.name}
                         </div>
                         <div className="flex flex-wrap gap-1 justify-center">
@@ -363,7 +363,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                                 sub.items.length,
                               )}`}
                             >
-                              <span className="[font-family:'Cairo',Helvetica] font-normal text-white-color text-base">
+                              <span className="font-normal text-white-color text-base">
                                 {item}
                               </span>
                             </div>
@@ -380,7 +380,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           <div className="grid grid-cols-3 gap-6">
             <Card className="border-[#e0e7ec]">
               <CardHeader>
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Overall Compliance Score
                 </CardTitle>
               </CardHeader>
@@ -403,12 +403,12 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center pt-8">
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-[44px]">
+                    <div className="font-bold text-primary-color text-[44px]">
                       65%
                     </div>
                   </div>
                 </div>
-                <div className="[font-family:'Cairo',Helvetica] font-normal text-[#8496a8] text-sm text-center mt-4">
+                <div className="font-normal text-[#8496a8] text-sm text-center mt-4">
                   Basic Standards 2025
                 </div>
               </CardContent>
@@ -416,7 +416,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
 
             <Card className="border-[#e0e7ec]">
               <CardHeader>
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Top Performing Perspective Leaders
                 </CardTitle>
               </CardHeader>
@@ -431,14 +431,14 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                       <AvatarFallback>{performer.name[0]}</AvatarFallback>
                     </Avatar>
                     <div className="flex-1">
-                      <div className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-base">
+                      <div className="font-medium text-primary-color text-base">
                         {performer.name}
                       </div>
-                      <div className="[font-family:'Cairo',Helvetica] font-medium text-[#8597a8] text-base">
+                      <div className="font-medium text-[#8597a8] text-base">
                         {performer.role}
                       </div>
                     </div>
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                    <div className="font-bold text-primary-color text-base">
                       {performer.score}
                     </div>
                   </div>
@@ -448,7 +448,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
 
             <Card className="border-[#e0e7ec]">
               <CardHeader>
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Recent Activities
                 </CardTitle>
               </CardHeader>
@@ -460,10 +460,10 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                   >
                     <div className="w-1.5 h-1.5 bg-accent-red rounded-[3px] mt-2 flex-shrink-0" />
                     <div className="flex-1">
-                      <div className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-base mb-1">
+                      <div className="font-medium text-primary-color text-base mb-1">
                         {activity.text}
                       </div>
-                      <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-xs">
+                      <div className="font-normal text-secondary-color text-xs">
                         {activity.time}
                       </div>
                     </div>
@@ -476,7 +476,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           <div className="grid grid-cols-3 gap-6">
             <Card className="col-span-2 border-[#e0e7ec]">
               <CardHeader>
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   12-Month Performance
                 </CardTitle>
               </CardHeader>
@@ -512,7 +512,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
 
             <Card className="border-[#e0e7ec]">
               <CardHeader>
-                <CardTitle className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                <CardTitle className="font-bold text-primary-color text-base">
                   Audit Readiness
                 </CardTitle>
               </CardHeader>
@@ -535,28 +535,28 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center pt-8">
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-[44px]">
+                    <div className="font-bold text-primary-color text-[44px]">
                       65%
                     </div>
                   </div>
                 </div>
-                <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm text-center mt-4">
+                <div className="font-normal text-secondary-color text-sm text-center mt-4">
                   Readiness Level
                 </div>
                 <div className="w-full border-t border-[#e0e7ec] mt-6 pt-6 grid grid-cols-2 gap-8">
                   <div className="text-center">
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
+                    <div className="font-bold text-primary-color text-2xl">
                       12
                     </div>
-                    <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm mt-2">
+                    <div className="font-normal text-secondary-color text-sm mt-2">
                       Overdue Stds
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
+                    <div className="font-bold text-primary-color text-2xl">
                       5
                     </div>
-                    <div className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm mt-2">
+                    <div className="font-normal text-secondary-color text-sm mt-2">
                       Missing Evidence
                     </div>
                   </div>

@@ -143,7 +143,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
             >
               <Icon src={arrowLeftIcon} size="sm" />
             </button>
-            <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+            <h1 className="font-bold text-primary-color text-base">
               Digital Transformation Strategic Planning
             </h1>
           </div>
@@ -154,14 +154,14 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                 <div className="space-y-4">
                   <Badge
                     variant="outline"
-                    className="border-[#e0e8ed] text-[#8597a8] [font-family:'Cairo',Helvetica] font-medium"
+                    className="border-[#e0e8ed] text-[#8597a8] font-medium"
                   >
                     Strategy & Planning
                   </Badge>
-                  <h2 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                  <h2 className="font-bold text-primary-color text-base">
                     Digital Transformation Strategic Planning
                   </h2>
-                  <p className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm">
+                  <p className="font-normal text-secondary-color text-sm">
                     Develop Comprehensive Strategic Plans For Digital
                     Transformation Aligned With Organizational Goals
                   </p>
@@ -173,7 +173,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                     alt="Progress circle"
                     src={ellipse116}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center [font-family:'Cairo',Helvetica] font-bold text-primary-color text-sm">
+                  <div className="absolute inset-0 flex items-center justify-center font-bold text-primary-color text-sm">
                     0%
                   </div>
                 </div>
@@ -187,11 +187,11 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center gap-4">
                     <Icon src={card.icon} size="md" />
-                    <span className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
+                    <span className="font-bold text-primary-color text-2xl">
                       {card.count}
                     </span>
                   </div>
-                  <p className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm">
+                  <p className="font-normal text-secondary-color text-sm">
                     {card.label}
                   </p>
                 </CardContent>
@@ -203,13 +203,13 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
             <TabsList className="bg-[#e0e7ec80] p-[3px]">
               <TabsTrigger
                 value="overview"
-                className="[font-family:'Cairo',Helvetica] text-sm data-[state=active]:bg-white-color"
+                className="text-sm data-[state=active]:bg-white-color"
               >
                 Overview
               </TabsTrigger>
               <TabsTrigger
                 value="evidence"
-                className="[font-family:'Cairo',Helvetica] text-sm data-[state=active]:bg-white-color"
+                className="text-sm data-[state=active]:bg-white-color"
               >
                 Evidence
               </TabsTrigger>
@@ -224,7 +224,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                         {tableHeaders.map((header, index) => (
                           <TableHead
                             key={index}
-                            className="[font-family:'Cairo',Helvetica] text-center"
+                            className="text-center"
                           >
                             <div className="flex items-center justify-center gap-2">
                               <span className="text-primary-color text-xs font-normal">
@@ -242,27 +242,27 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                     <TableBody>
                       {documentsData.map((doc, index) => (
                         <TableRow key={index}>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.number}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.name}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.lead}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.preparer}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.date}
                           </TableCell>
-                          <TableCell className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm text-center">
+                          <TableCell className="font-normal text-primary-color text-sm text-center">
                             {doc.dueDate}
                           </TableCell>
                           <TableCell className="text-center">
                             <Badge
-                              className={`${doc.statusColor} [font-family:'Cairo',Helvetica] font-normal text-sm`}
+                              className={`${doc.statusColor} font-normal text-sm`}
                             >
                               {doc.status}
                             </Badge>
@@ -277,7 +277,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
               <div className="grid grid-cols-[1fr_368px] gap-6">
                 <Card className="border-[#e0e7ec]">
                   <CardContent className="p-6 space-y-6">
-                    <h3 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                    <h3 className="font-bold text-primary-color text-base">
                       Comments
                     </h3>
 
@@ -294,14 +294,14 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                               </Avatar>
                               <div className="flex-1 space-y-1">
                                 <div className="flex items-center justify-between">
-                                  <span className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-sm">
+                                  <span className="font-bold text-primary-color text-sm">
                                     {comment.name}
                                   </span>
-                                  <span className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-sm">
+                                  <span className="font-normal text-secondary-color text-sm">
                                     {comment.date}
                                   </span>
                                 </div>
-                                <p className="[font-family:'Cairo',Helvetica] font-normal text-primary-color text-sm">
+                                <p className="font-normal text-primary-color text-sm">
                                   {comment.comment}
                                 </p>
                               </div>
@@ -311,7 +311,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                       ))}
                     </div>
 
-                    <Button className="bg-primary-color hover:bg-primary-color/90 [font-family:'Cairo',Helvetica]">
+                    <Button className="bg-primary-color hover:bg-primary-color/90">
                       <SendIcon className="w-4 h-4 mr-2" />
                       Post Comment
                     </Button>
@@ -320,7 +320,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
 
                 <Card className="border-[#e0e7ec]">
                   <CardContent className="p-6 space-y-4">
-                    <h3 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+                    <h3 className="font-bold text-primary-color text-base">
                       Recent Activities
                     </h3>
 
@@ -330,10 +330,10 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                           <div className="flex items-start gap-3">
                             <div className="w-1.5 h-1.5 bg-accent-red rounded-[3px] mt-2" />
                             <div className="flex-1 space-y-1">
-                              <p className="[font-family:'Cairo',Helvetica] font-medium text-primary-color text-base leading-[22px]">
+                              <p className="font-medium text-primary-color text-base leading-[22px]">
                                 {activity.text}
                               </p>
-                              <span className="[font-family:'Cairo',Helvetica] font-normal text-secondary-color text-xs">
+                              <span className="font-normal text-secondary-color text-xs">
                                 {activity.time}
                               </span>
                             </div>

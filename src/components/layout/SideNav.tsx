@@ -83,7 +83,7 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
             >
               <Icon src={item.icon} size="sm" className="flex-shrink-0" />
               {!collapsed && (
-                <span className="[font-family:'Cairo',Helvetica] font-medium text-sm whitespace-nowrap overflow-hidden">
+                <span className="font-medium text-sm whitespace-nowrap overflow-hidden">
                   {item.label}
                 </span>
               )}

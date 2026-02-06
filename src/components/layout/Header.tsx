@@ -26,7 +26,7 @@ export const Header = ({
         <div className="relative">
           <Input
             placeholder="Search"
-            className="w-[318px] pl-10 [font-family:'Cairo',Helvetica]"
+            className="w-[318px] pl-10"
           />
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary-color" />
         </div>
