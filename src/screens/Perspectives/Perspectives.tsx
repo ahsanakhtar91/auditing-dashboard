@@ -4,11 +4,11 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../components/ui/Avatar";
-import { Badge } from "../../components/ui/Badge";
-import { Button } from "../../components/ui/Button";
-import { Card, CardContent } from "../../components/ui/Card";
-import { Separator } from "../../components/ui/Separator";
+} from "../../components/core/Avatar";
+import { Badge } from "../../components/core/Badge";
+import { Button } from "../../components/core/Button";
+import { Card, CardContent } from "../../components/core/Card";
+import { Separator } from "../../components/core/Separator";
 import {
   Table,
   TableBody,
@@ -16,13 +16,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/Table";
+} from "../../components/core/Table";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../components/ui/Tabs";
+} from "../../components/core/Tabs";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
 
@@ -129,9 +129,9 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
 
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav 
-        activeItem="perspectives" 
-        collapsed={sidebarCollapsed} 
+      <SideNav
+        activeItem="perspectives"
+        collapsed={sidebarCollapsed}
         onNavigate={onNavigate}
         onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
       />

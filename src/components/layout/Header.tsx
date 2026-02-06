@@ -6,8 +6,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../ui/Avatar";
-import { Input } from "../ui/Input";
+} from "../core/avatar";
+import { Input } from "../core/Input";
 
 interface HeaderProps {
   userName?: string;

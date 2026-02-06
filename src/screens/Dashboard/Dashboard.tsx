@@ -3,21 +3,21 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../components/ui/Avatar";
-import { Badge } from "../../components/ui/Badge";
+} from "../../components/core/Avatar";
+import { Badge } from "../../components/core/Badge";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../components/ui/Card";
+} from "../../components/core/Card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../components/ui/Select";
+} from "../../components/core/Select";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
 
@@ -226,10 +226,10 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
 
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav 
-        activeItem="dashboard" 
-        collapsed={sidebarCollapsed} 
-        onNavigate={onNavigate} 
+      <SideNav
+        activeItem="dashboard"
+        collapsed={sidebarCollapsed}
+        onNavigate={onNavigate}
         onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
 
@@ -269,9 +269,8 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                     {timelinePhases.map((_, index) => (
                       <div key={index} className="flex items-center justify-center">
                         <div
-                          className={`w-2.5 h-2.5 rounded-full ${
-                            index < 2 ? "bg-white-color" : "bg-accent-red"
-                          }`}
+                          className={`w-2.5 h-2.5 rounded-full ${index < 2 ? "bg-white-color" : "bg-accent-red"
+                            }`}
                         />
                       </div>
                     ))}
@@ -336,8 +335,8 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
             <CardContent>
               <div className="grid grid-cols-10 gap-3">
                 {perspectives.map((perspective, pIndex) => (
-                  <div 
-                    key={pIndex} 
+                  <div
+                    key={pIndex}
                     className="flex flex-col gap-3 cursor-pointer"
                     onClick={() => onNavigate?.("perspectives")}
                   >
