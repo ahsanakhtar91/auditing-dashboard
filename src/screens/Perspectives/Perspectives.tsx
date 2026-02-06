@@ -25,6 +25,7 @@ import {
 } from "../../components/core/Tabs";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
+import { Icon } from "../../components/core/Icon";
 import {
   filesIcon,
   fileSearchIcon,
@@ -175,12 +176,12 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                 </div>
 
                 <div className="relative w-[83px] h-[81px]">
-                  <img
+                  <Icon
                     className="absolute top-0 left-0 w-[81px] h-[81px]"
                     alt="Progress circle"
                     src={ellipse116}
                   />
-                  <img
+                  <Icon
                     className="absolute top-0 left-px w-[81px] h-[81px]"
                     alt="Progress fill"
                     src={ellipse117}
@@ -198,7 +199,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
               <Card key={index} className="border-[#e0e7ec]">
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center gap-4">
-                    <img src={card.icon} alt="" className="w-6 h-6" />
+                    <Icon src={card.icon} size="md" />
                     <span className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-2xl">
                       {card.count}
                     </span>
@@ -242,10 +243,9 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                               <span className="text-primary-color text-xs font-normal">
                                 {header.label}
                               </span>
-                              <img
+                              <Icon
                                 src={header.icon}
-                                alt=""
-                                className="w-3 h-3"
+                                size="xs"
                               />
                             </div>
                           </TableHead>

@@ -1,17 +1,17 @@
 import {
-  BarChart3Icon,
-  CheckSquareIcon,
-  FileIcon,
-  FileTextIcon,
-  HomeIcon,
-  UsersIcon,
-  LucideIcon,
-} from "lucide-react";
-import { frameToggleIcon } from "../../assets";
+  frameToggleIcon,
+  homeIcon,
+  medicalFileIcon,
+  profileIcon,
+  fileIcon,
+  chartBarLineIcon,
+  userMultipleIcon
+} from "../../assets";
 import tahwulLogo from "../../assets/tahwul-01-3x-1.png";
+import { Icon } from "../core/Icon";
 
 export interface NavItem {
-  icon: LucideIcon;
+  icon: string;
   label: string;
   id: string;
 }
@@ -24,42 +24,43 @@ interface SideNavProps {
 }
 
 const navigationItems: NavItem[] = [
-  { icon: HomeIcon, label: "Dashboard", id: "dashboard" },
-  { icon: FileTextIcon, label: "Perspectives", id: "perspectives" },
-  { icon: CheckSquareIcon, label: "Tasks", id: "tasks" },
-  { icon: FileIcon, label: "Documents", id: "documents" },
-  { icon: BarChart3Icon, label: "Reports", id: "reports" },
-  { icon: UsersIcon, label: "Users & Roles", id: "users" },
+  { icon: homeIcon, label: "Dashboard", id: "dashboard" },
+  { icon: medicalFileIcon, label: "Perspectives", id: "perspectives" },
+  { icon: profileIcon, label: "Tasks", id: "tasks" },
+  { icon: fileIcon, label: "Documents", id: "documents" },
+  { icon: chartBarLineIcon, label: "Reports", id: "reports" },
+  { icon: userMultipleIcon, label: "Users & Roles", id: "users" },
 ];
 
 export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCollapse }: SideNavProps) => {
   return (
-    <aside 
-      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out relative ${
-        collapsed ? "w-[72px]" : "w-64"
-      }`}
+    <aside
+      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out relative ${collapsed ? "w-[72px]" : "w-64"
+        }`}
     >
       {/* Toggle button - positioned half on sidebar, half on content */}
-      <button 
+      <button
         onClick={onToggleCollapse}
         className="absolute top-[14px] -right-4 z-50 w-8 h-8 flex flex-row items-center justify-center bg-white shadow-[0px_0px_2px_rgba(0,0,0,0.1)] rounded-2xl hover:shadow-[0px_0px_4px_rgba(0,0,0,0.15)] transition-shadow"
         title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
-        <img 
-          className={`w-9 h-9 transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`} 
-          alt="Toggle sidebar" 
-          src={frameToggleIcon} 
+        <Icon
+          className={`transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`}
+          alt="Toggle sidebar"
+          src={frameToggleIcon}
+          size="lg"
         />
       </button>
       <div className={`p-6 ${collapsed ? "flex justify-center" : ""}`}>
         {collapsed ? (
-          <img
-            className="w-10 h-10 object-contain"
+          <Icon
+            className="object-contain"
             alt="Tahwul"
             src={tahwulLogo}
+            size="xl"
           />
         ) : (
-          <img
+          <Icon
             className="w-[100px] h-10 object-cover"
             alt="Tahwul"
             src={tahwulLogo}
@@ -75,13 +76,12 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
               key={item.id}
               onClick={() => onNavigate?.(item.id)}
               title={collapsed ? item.label : undefined}
-              className={`flex w-full items-center gap-2.5 p-2.5 rounded-lg transition-colors ${
-                isActive
-                  ? "bg-[#98aec01a] text-white"
-                  : "text-[#7a9ec2] hover:bg-[#98aec01a] hover:text-white"
-              } ${collapsed ? "justify-center" : ""}`}
+              className={`flex w-full items-center gap-2.5 p-2.5 rounded-lg transition-colors ${isActive
+                ? "bg-[#98aec01a] text-white"
+                : "text-[#7a9ec2] hover:bg-[#98aec01a] hover:text-white"
+                } ${collapsed ? "justify-center" : ""}`}
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
+              <Icon src={item.icon} size="sm" className="flex-shrink-0" />
               {!collapsed && (
                 <span className="[font-family:'Cairo',Helvetica] font-medium text-sm whitespace-nowrap overflow-hidden">
                   {item.label}
@@ -92,6 +92,6 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
         })}
       </nav>
 
-      </aside>
+    </aside>
   );
 };

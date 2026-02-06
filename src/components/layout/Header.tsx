@@ -8,6 +8,7 @@ import {
   AvatarImage,
 } from "../core/avatar";
 import { Input } from "../core/Input";
+import { Icon } from "../core/Icon";
 import { chevronDownIcon, avatarEllipse18 } from "../../assets";
 
 interface HeaderProps {
@@ -45,7 +46,7 @@ export const Header = ({
           <span className="font-typography-label text-[#23252a] text-xs">
             {userName}
           </span>
-          <img src={chevronDownIcon} alt="" className="w-3 h-3" />
+          <Icon src={chevronDownIcon} size="xs" />
         </button>
       </div>
     </header>

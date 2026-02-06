@@ -20,6 +20,7 @@ import {
 } from "../../components/core/Select";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
+import { Icon } from "../../components/core/Icon";
 import {
   chartBarLineIcon,
   folderIcon,
@@ -318,7 +319,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                         {card.label}
                       </div>
                     </div>
-                    <img src={card.icon} alt="" className="w-6 h-6 text-accent-red" />
+                    <Icon src={card.icon} size="md" className="text-accent-red" />
                   </div>
                 </CardContent>
               </Card>
@@ -542,7 +543,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                       strokeLinecap="round"
                     />
                     <path
-                      d="M20,129 A109,109 0 0,1 200,40"
+                      d="M20,129 A109,109 0 0,1 160,25"
                       fill="none"
                       stroke="#0078d7"
                       strokeWidth="20"
@@ -551,7 +552,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center pt-8">
                     <div className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-[44px]">
-                      80%
+                      65%
                     </div>
                   </div>
                 </div>
