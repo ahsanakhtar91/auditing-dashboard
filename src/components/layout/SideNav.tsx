@@ -7,6 +7,8 @@ import {
   UsersIcon,
   LucideIcon,
 } from "lucide-react";
+import { frameToggleIcon } from "../../assets";
+import tahwulLogo from "../../assets/tahwul-01-3x-1.png";
 
 export interface NavItem {
   icon: LucideIcon;
@@ -46,7 +48,7 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
         <img 
           className={`w-9 h-9 transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`} 
           alt="Toggle sidebar" 
-          src="/frame-1171274846.svg" 
+          src={frameToggleIcon} 
         />
       </button>
       <div className={`p-6 ${collapsed ? "flex justify-center" : ""}`}>
@@ -54,13 +56,13 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
           <img
             className="w-10 h-10 object-contain"
             alt="Tahwul"
-            src="/tahwul-01-3x-1.png"
+            src={tahwulLogo}
           />
         ) : (
           <img
             className="w-[100px] h-10 object-cover"
             alt="Tahwul"
-            src="/tahwul-01-3x-1.png"
+            src={tahwulLogo}
           />
         )}
       </div>

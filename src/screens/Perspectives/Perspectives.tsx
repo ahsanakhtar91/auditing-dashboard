@@ -25,25 +25,36 @@ import {
 } from "../../components/core/Tabs";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
+import {
+  filesIcon,
+  fileSearchIcon,
+  fileExportIcon,
+  fileValidationIcon,
+  sortingAZIcon,
+  avatarE,
+  avatarM,
+  ellipse116,
+  ellipse117,
+} from "../../assets";
 
 interface PerspectivesProps {
   onNavigate?: (page: string) => void;
 }
 
 const statisticsCards = [
-  { icon: "/hugeicons-files-01.svg", count: "4", label: "Total Evidence" },
+  { icon: filesIcon, count: "4", label: "Total Evidence" },
   {
-    icon: "/hugeicons-file-search.svg",
+    icon: fileSearchIcon,
     count: "3",
     label: "Under Review Evidence",
   },
   {
-    icon: "/hugeicons-file-export.svg",
+    icon: fileExportIcon,
     count: "2",
     label: "In Progress Evidence",
   },
   {
-    icon: "/hugeicons-file-validation.svg",
+    icon: fileValidationIcon,
     count: "1",
     label: "Completed Evidence",
   },
@@ -84,14 +95,14 @@ const documentsData = [
 
 const commentsData = [
   {
-    avatar: "/e.svg",
+    avatar: avatarE,
     initial: "E",
     name: "Sara Ibrahim",
     date: "2025-08-05",
     comment: "Ensure The Plan Includes A Clear Governance Model.",
   },
   {
-    avatar: "/m.svg",
+    avatar: avatarM,
     initial: "M",
     name: "Mona Hamed",
     date: "2025-08-05",
@@ -115,13 +126,13 @@ const recentActivities = [
 ];
 
 const tableHeaders = [
-  { label: "Document Number", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Document Name", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Document Lead", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Document Preparer", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Date", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Due Date", icon: "/hugeicons-sorting-a-z-02.svg" },
-  { label: "Status", icon: "/hugeicons-sorting-a-z-02.svg" },
+  { label: "Document Number", icon: sortingAZIcon },
+  { label: "Document Name", icon: sortingAZIcon },
+  { label: "Document Lead", icon: sortingAZIcon },
+  { label: "Document Preparer", icon: sortingAZIcon },
+  { label: "Date", icon: sortingAZIcon },
+  { label: "Due Date", icon: sortingAZIcon },
+  { label: "Status", icon: sortingAZIcon },
 ];
 
 export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => {
@@ -167,12 +178,12 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                   <img
                     className="absolute top-0 left-0 w-[81px] h-[81px]"
                     alt="Progress circle"
-                    src="/ellipse-116.svg"
+                    src={ellipse116}
                   />
                   <img
                     className="absolute top-0 left-px w-[81px] h-[81px]"
                     alt="Progress fill"
-                    src="/ellipse-117.svg"
+                    src={ellipse117}
                   />
                   <div className="absolute inset-0 flex items-center justify-center [font-family:'Cairo',Helvetica] font-bold text-primary-color text-sm">
                     100%

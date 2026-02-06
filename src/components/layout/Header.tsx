@@ -8,6 +8,7 @@ import {
   AvatarImage,
 } from "../core/avatar";
 import { Input } from "../core/Input";
+import { chevronDownIcon, avatarEllipse18 } from "../../assets";
 
 interface HeaderProps {
   userName?: string;
@@ -16,7 +17,7 @@ interface HeaderProps {
 
 export const Header = ({ 
   userName = "Mohamed", 
-  userAvatar = "/ellipse-18.svg",
+  userAvatar = avatarEllipse18,
 }: HeaderProps) => {
   return (
     <header className="h-[60px] bg-white border-b border-[#e0e7ec] flex items-center justify-between px-6">
@@ -36,7 +37,7 @@ export const Header = ({
           <span className="absolute -top-1 -right-1 w-[7px] h-[7px] bg-accent-red rounded-full" />
         </button>
 
-        <button className="flex items-center gap-2 h-8 px-3 bg-[#f9fafa] rounded-[30px]">
+        <button className="flex items-center gap-2 h-8 px-1 bg-[#f9fafa] rounded-[30px]">
           <Avatar className="w-6 h-6">
             <AvatarImage src={userAvatar} />
             <AvatarFallback>{userName.charAt(0)}</AvatarFallback>
@@ -44,7 +45,7 @@ export const Header = ({
           <span className="font-typography-label text-[#23252a] text-xs">
             {userName}
           </span>
-          <img src="/chevron-down.svg" alt="" className="w-3 h-3" />
+          <img src={chevronDownIcon} alt="" className="w-3 h-3" />
         </button>
       </div>
     </header>

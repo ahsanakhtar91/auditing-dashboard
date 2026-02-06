@@ -4,6 +4,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { chevronDownIcon } from "../../assets";
 
 const Select = SelectPrimitive.Root;
 
@@ -25,7 +26,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <img src="/chevron-down.svg" alt="" className="h-3 w-3" />
+      <img src={chevronDownIcon} alt="" className="h-3 w-3" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));

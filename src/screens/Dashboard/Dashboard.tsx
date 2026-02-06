@@ -20,6 +20,17 @@ import {
 } from "../../components/core/Select";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
+import {
+  chartBarLineIcon,
+  folderIcon,
+  folderCheckIcon,
+  fileSecurityIcon,
+  fileVerifiedIcon,
+  fileUploadIcon,
+  ellipse118,
+  ellipse119,
+  ellipse120,
+} from "../../assets";
 
 interface DashboardProps {
   onNavigate?: (page: string) => void;
@@ -38,28 +49,28 @@ const metricCards = [
   {
     value: "78.65%",
     label: "Overall Progress",
-    icon: "/hugeicons-chart-bar-line.svg",
+    icon: chartBarLineIcon,
   },
-  { value: "95", label: "Total Criteria", icon: "/hugeicons-folder-01.svg" },
+  { value: "95", label: "Total Criteria", icon: folderIcon },
   {
     value: "52",
     label: "Completed Criteria",
-    icon: "/hugeicons-folder-check.svg",
+    icon: folderCheckIcon,
   },
   {
     value: "386",
     label: "Evidence Documents",
-    icon: "/hugeicons-file-security.svg",
+    icon: fileSecurityIcon,
   },
   {
     value: "302",
     label: "Evidence (Completed)",
-    icon: "/hugeicons-file-verified.svg",
+    icon: fileVerifiedIcon,
   },
   {
     value: "258",
     label: "Uploaded To DGA",
-    icon: "/hugeicons-file-upload.svg",
+    icon: fileUploadIcon,
   },
 ];
 
@@ -166,19 +177,19 @@ const topPerformers = [
     name: "Ahmed Al-Ali",
     role: "Strategy Perspective",
     score: "96%",
-    avatar: "/ellipse-118.svg",
+    avatar: ellipse118,
   },
   {
     name: "Sarah Al-Khaled",
     role: "Beneficiary Perspective",
     score: "94%",
-    avatar: "/ellipse-119.svg",
+    avatar: ellipse119,
   },
   {
     name: "Mohammad Al-Mansour",
     role: "IT Perspective",
     score: "92%",
-    avatar: "/ellipse-120.svg",
+    avatar: ellipse120,
   },
 ];
 
