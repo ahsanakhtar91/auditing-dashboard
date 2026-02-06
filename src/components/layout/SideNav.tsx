@@ -40,7 +40,7 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCol
       {/* Toggle button - positioned half on sidebar, half on content */}
       <button 
         onClick={onToggleCollapse}
-        className="absolute top-5 -right-[18px] z-50 w-9 h-9 flex items-center justify-center hover:opacity-80 transition-opacity"
+        className="absolute top-[14px] -right-4 z-50 w-8 h-8 flex flex-row items-center justify-center bg-white shadow-[0px_0px_2px_rgba(0,0,0,0.1)] rounded-2xl hover:shadow-[0px_0px_4px_rgba(0,0,0,0.15)] transition-shadow"
         title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
         <img 
