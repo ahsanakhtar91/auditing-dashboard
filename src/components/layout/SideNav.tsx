@@ -36,7 +36,7 @@ const navigationItems: NavItem[] = [
 export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCollapse, isMobile }: SideNavProps) => {
   return (
     <aside
-      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out relative ${collapsed ? "w-[72px]" : "w-64"
+      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col h-full transition-all duration-300 ease-in-out relative ${collapsed ? "w-[72px]" : "w-64"
         }`}
     >
       {/* Toggle button - positioned half on sidebar, half on content (hidden on mobile) */}
