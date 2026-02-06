@@ -21,6 +21,7 @@ interface SideNavProps {
   collapsed?: boolean;
   onNavigate?: (page: string) => void;
   onToggleCollapse?: () => void;
+  isMobile?: boolean;
 }
 
 const navigationItems: NavItem[] = [
@@ -32,25 +33,27 @@ const navigationItems: NavItem[] = [
   { icon: userMultipleIcon, label: "Users & Roles", id: "users" },
 ];
 
-export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCollapse }: SideNavProps) => {
+export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCollapse, isMobile }: SideNavProps) => {
   return (
     <aside
       className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out relative ${collapsed ? "w-[72px]" : "w-64"
         }`}
     >
-      {/* Toggle button - positioned half on sidebar, half on content */}
-      <button
-        onClick={onToggleCollapse}
-        className="absolute top-[14px] -right-4 z-50 w-8 h-8 flex flex-row items-center justify-center bg-white shadow-[0px_0px_2px_rgba(0,0,0,0.1)] rounded-2xl hover:shadow-[0px_0px_4px_rgba(0,0,0,0.15)] transition-shadow"
-        title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-      >
+      {/* Toggle button - positioned half on sidebar, half on content (hidden on mobile) */}
+      {!isMobile && (
+        <button
+          onClick={onToggleCollapse}
+          className="absolute top-[14px] -right-4 z-50 w-8 h-8 flex flex-row items-center justify-center bg-white shadow-[0px_0px_2px_rgba(0,0,0,0.1)] rounded-2xl hover:shadow-[0px_0px_4px_rgba(0,0,0,0.15)] transition-shadow"
+          title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
         <Icon
-          className={`transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`}
-          alt="Toggle sidebar"
-          src={frameToggleIcon}
-          size="lg"
-        />
-      </button>
+            className={`transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`}
+            alt="Toggle sidebar"
+            src={frameToggleIcon}
+            size="lg"
+          />
+        </button>
+      )}
       <div className={`p-6 ${collapsed ? "flex justify-center" : ""}`}>
         {collapsed ? (
           <Icon

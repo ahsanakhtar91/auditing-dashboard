@@ -32,10 +32,10 @@ Started with Vite + React + TypeScript setup. Built reusable components (`SideNa
 ## Notes
 
 - Data is static (no backend)
+- Fully responsive design (mobile, tablet, desktop)
 
 ## Improvements that could be done with more time
 
 - API integration (proper data coming from API that should change for each perspective)
-- Better Mobile responsiveness
 - Proper routing (React Router - where each perspective route is like `/perspective/[id]`)
 - Unit tests

@@ -135,7 +135,7 @@ const tableHeaders = [
 
 export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => {
   return (
-    <div className="flex-1 p-8 space-y-6">
+    <div className="flex-1 p-4 md:p-8 space-y-4 md:space-y-6">
           <div className="flex items-center gap-3">
             <button
               onClick={() => onNavigate?.("dashboard")}
@@ -181,7 +181,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
             </CardContent>
           </Card>
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {statisticsCards.map((card, index) => (
               <Card key={index} className="border-[#e0e7ec]">
                 <CardContent className="p-6 space-y-4">
@@ -217,8 +217,8 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
 
             <TabsContent value="evidence" className="space-y-6">
               <Card className="border-[#e0e7ec]">
-                <CardContent className="p-0">
-                  <Table>
+                <CardContent className="p-0 overflow-x-auto">
+                  <Table className="min-w-[800px]">
                     <TableHeader>
                       <TableRow className="bg-[#f5f8fb]">
                         {tableHeaders.map((header, index) => (
@@ -274,7 +274,7 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
                 </CardContent>
               </Card>
 
-              <div className="grid grid-cols-[1fr_368px] gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_368px] gap-6">
                 <Card className="border-[#e0e7ec]">
                   <CardContent className="p-6 space-y-6">
                     <h3 className="font-bold text-primary-color text-base">

@@ -232,7 +232,7 @@ const getStatusColor = (index: number, total: number) => {
 
 export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
   return (
-    <div className="flex-1 p-6 space-y-6">
+    <div className="flex-1 p-4 md:p-6 space-y-4 md:space-y-6">
       <Card className="border-[#e0e7ec]">
         <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
@@ -290,7 +290,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {metricCards.map((card, index) => (
           <Card key={index} className="border-[#e0e7ec]">
             <CardContent className="p-4">
@@ -329,7 +329,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-10 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3">
             {perspectives.map((perspective, pIndex) => (
               <div
                 key={pIndex}
@@ -377,7 +377,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card className="border-[#e0e7ec]">
           <CardHeader>
             <CardTitle className="font-bold text-primary-color text-base">
@@ -473,7 +473,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
         </Card>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card className="col-span-2 border-[#e0e7ec]">
           <CardHeader>
             <CardTitle className="font-bold text-primary-color text-base">
@@ -543,7 +543,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className="w-full border-t border-[#e0e7ec] mt-6 pt-6 grid grid-cols-2 gap-8">
+            <div className="w-full border-t border-[#e0e7ec] mt-6 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="text-center">
                 <div className="font-bold text-primary-color text-2xl">
                   12
