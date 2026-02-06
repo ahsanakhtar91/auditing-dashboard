@@ -1,17 +1,14 @@
 import { useState } from "react";
-import {
-  ArrowLeftIcon,
-  SendIcon,
-} from "lucide-react";
+import { SendIcon } from "lucide-react";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../components/ui/avatar";
-import { Badge } from "../../components/ui/badge";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
-import { Separator } from "../../components/ui/separator";
+} from "../../components/ui/Avatar";
+import { Badge } from "../../components/ui/Badge";
+import { Button } from "../../components/ui/Button";
+import { Card, CardContent } from "../../components/ui/Card";
+import { Separator } from "../../components/ui/Separator";
 import {
   Table,
   TableBody,
@@ -19,13 +16,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table";
+} from "../../components/ui/Table";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../components/ui/tabs";
+} from "../../components/ui/Tabs";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
 
@@ -132,23 +129,20 @@ export const Perspectives = ({ onNavigate }: PerspectivesProps): JSX.Element => 
 
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav activeItem="perspectives" collapsed={sidebarCollapsed} onNavigate={onNavigate} />
+      <SideNav 
+        activeItem="perspectives" 
+        collapsed={sidebarCollapsed} 
+        onNavigate={onNavigate}
+        onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+      />
 
       <main className="flex-1 flex flex-col">
-        <Header 
-          sidebarCollapsed={sidebarCollapsed} 
-          onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)} 
-        />
+        <Header />
 
         <div className="flex-1 p-8 space-y-6">
-          <div className="flex items-center gap-2">
-            <button onClick={() => onNavigate?.("dashboard")} className="hover:bg-gray-100 p-1 rounded transition-colors">
-              <ArrowLeftIcon className="w-4 h-4 text-primary-color" />
-            </button>
-            <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
-              Digital Transformation Strategic Planning
-            </h1>
-          </div>
+          <h1 className="[font-family:'Cairo',Helvetica] font-bold text-primary-color text-base">
+            Digital Transformation Strategic Planning
+          </h1>
 
           <Card className="border-[#e0e7ec]">
             <CardContent className="p-6">

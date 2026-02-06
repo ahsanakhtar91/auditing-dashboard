@@ -1,42 +1,26 @@
 import {
   BellIcon,
-  ChevronDownIcon,
   SearchIcon,
 } from "lucide-react";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../ui/avatar";
-import { Input } from "../ui/input";
+} from "../ui/Avatar";
+import { Input } from "../ui/Input";
 
 interface HeaderProps {
   userName?: string;
   userAvatar?: string;
-  sidebarCollapsed?: boolean;
-  onToggleSidebar?: () => void;
 }
 
 export const Header = ({ 
   userName = "Mohamed", 
   userAvatar = "/ellipse-18.svg",
-  sidebarCollapsed = false,
-  onToggleSidebar,
 }: HeaderProps) => {
   return (
     <header className="h-[60px] bg-white border-b border-[#e0e7ec] flex items-center justify-between px-6">
       <div className="flex items-center gap-4">
-        <button 
-          onClick={onToggleSidebar}
-          className="w-9 h-9 flex items-center justify-center hover:opacity-80 transition-opacity"
-          title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          <img 
-            className={`w-9 h-9 transition-transform duration-300 ${sidebarCollapsed ? "rotate-180" : ""}`} 
-            alt="Toggle sidebar" 
-            src="/frame-1171274846.svg" 
-          />
-        </button>
         <div className="relative">
           <Input
             placeholder="Search"
@@ -60,7 +44,7 @@ export const Header = ({
           <span className="font-typography-label text-[#23252a] text-xs">
             {userName}
           </span>
-          <ChevronDownIcon className="w-3 h-3 text-[#23252a]" />
+          <img src="/chevron-down.svg" alt="" className="w-3 h-3" />
         </button>
       </div>
     </header>

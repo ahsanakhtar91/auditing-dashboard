@@ -3,21 +3,21 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../components/ui/avatar";
-import { Badge } from "../../components/ui/badge";
+} from "../../components/ui/Avatar";
+import { Badge } from "../../components/ui/Badge";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../components/ui/card";
+} from "../../components/ui/Card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../components/ui/select";
+} from "../../components/ui/Select";
 import { SideNav } from "../../components/layout/SideNav";
 import { Header } from "../../components/layout/Header";
 
@@ -226,13 +226,15 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
 
   return (
     <div className="flex min-h-screen bg-background-color">
-      <SideNav activeItem="dashboard" collapsed={sidebarCollapsed} onNavigate={onNavigate} />
+      <SideNav 
+        activeItem="dashboard" 
+        collapsed={sidebarCollapsed} 
+        onNavigate={onNavigate} 
+        onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+      />
 
       <main className="flex-1">
-        <Header 
-          sidebarCollapsed={sidebarCollapsed} 
-          onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)} 
-        />
+        <Header />
 
         <div className="p-6 space-y-6">
           <Card className="border-[#e0e7ec]">
@@ -242,7 +244,7 @@ export const Dashboard = ({ onNavigate }: DashboardProps): JSX.Element => {
                   Project Timeline
                 </CardTitle>
                 <Select defaultValue="2026">
-                  <SelectTrigger className="w-[90px] h-[34px] bg-white-color border-[#e0e7ec]">
+                  <SelectTrigger className="w-[90px]">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>

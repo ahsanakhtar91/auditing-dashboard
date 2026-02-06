@@ -18,6 +18,7 @@ interface SideNavProps {
   activeItem: string;
   collapsed?: boolean;
   onNavigate?: (page: string) => void;
+  onToggleCollapse?: () => void;
 }
 
 const navigationItems: NavItem[] = [
@@ -29,13 +30,25 @@ const navigationItems: NavItem[] = [
   { icon: UsersIcon, label: "Users & Roles", id: "users" },
 ];
 
-export const SideNav = ({ activeItem, collapsed = false, onNavigate }: SideNavProps) => {
+export const SideNav = ({ activeItem, collapsed = false, onNavigate, onToggleCollapse }: SideNavProps) => {
   return (
     <aside 
-      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out ${
+      className={`bg-[#1d3557] border-r border-[#f1f2f3] flex flex-col min-h-screen transition-all duration-300 ease-in-out relative ${
         collapsed ? "w-[72px]" : "w-64"
       }`}
     >
+      {/* Toggle button - positioned half on sidebar, half on content */}
+      <button 
+        onClick={onToggleCollapse}
+        className="absolute top-5 -right-[18px] z-50 w-9 h-9 flex items-center justify-center hover:opacity-80 transition-opacity"
+        title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+      >
+        <img 
+          className={`w-9 h-9 transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`} 
+          alt="Toggle sidebar" 
+          src="/frame-1171274846.svg" 
+        />
+      </button>
       <div className={`p-6 ${collapsed ? "flex justify-center" : ""}`}>
         {collapsed ? (
           <img
@@ -77,9 +90,6 @@ export const SideNav = ({ activeItem, collapsed = false, onNavigate }: SideNavPr
         })}
       </nav>
 
-      <div className={`p-6 ${collapsed ? "flex justify-center" : ""}`}>
-        <img className="w-9 h-9" alt="Frame" src="/frame-1171274846.svg" />
-      </div>
-    </aside>
+      </aside>
   );
 };
